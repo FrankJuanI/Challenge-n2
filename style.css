@@ -4,43 +4,96 @@ body {
 }
 
 .card {
-  height: 20em;
+  height: 25em;
   width: 25em;
-  background-color: aqua;
+  background-color: #ffffff;
   border-radius: 15px 15px 0px 15px;
+  padding: 1.5em;
+  padding-bottom: 0;
+  box-sizing: border-box;
+}
+
+.product-image {
+  height: 55%;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.product-image img {
+  height: 100%;
+  width: 100%;
 }
 
 .footer-card {
-  height: 8em;
+  height: 7em;
   width: 25em;
   display: flex;
+  position: relative;
 }
 
 .addCard-button {
-  width: 10em;
-  height: 8em;
-  background-color: rgb(95, 67, 67);
+  width: 12em;
+  height: 100%;
+  background-color: transparent;
   position: relative;
   display: flex;
   border: none;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
 }
 
 .addCard-button::after {
   content: "";
   height: 30px;
   width: 30px;
-  background-color: aqua;
-  box-shadow: 0px -15px black;
-  top: -1px;
+  background-color: transparent;
+  box-shadow: 0px -15px #ffffff;
+  top: 0px;
   right: 0px;
-  position: relative;
+  position: absolute;
   border-radius: 0px 15px 0px 0px;
+}
+
+.addCard-button svg {
+  height: 50%;
+  width: 50%;
 }
 
 .footer {
   width: 100%;
-  height: 8em;
-  background-color: burlywood;
+  height: 100%;
+  background-color: #ffffff;
   display: inline-block;
   border-radius: 0px 0px 15px 15px;
+  display: flex;
+  flex-direction: column;
+  text-align: end;
+  padding-right: 0.5em;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+
+.prices {
+  position: absolute;
+  right: 2em;
+  bottom: 30%;
+}
+
+.old-price {
+  color: #808080;
+  font-size: 1.2em;
+  font-weight: 500;
+  font-family: "Rubik", sans-serif;
+  margin-bottom: 10px;
+  text-decoration: line-through;
+}
+
+.offer-price {
+  color: #941b0c;
+  font-size: 4em;
+  font-weight: 500;
+  font-family: "Rubik", sans-serif;
+  margin: 0;
 }
