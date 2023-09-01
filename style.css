@@ -1,11 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Rubik:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+
 body {
   margin: 0;
   background-color: #222222;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.navBar {
+  display: flex;
+  flex-direction: row;
+  max-width: 1440px;
+  justify-content: space-between;
+  margin: 2em 1em;
+}
+
+.logogm {
+  display: inline-block;
+}
+
+.options {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  width: 4em;
+  justify-content: space-between;
+}
+
+.productos-destacados {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 4em;
+}
+
+.info {
+  font-size: 1rem;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .card {
+  width: 24%;
+  box-sizing: border-box;
+}
+
+.header-card {
   height: 25em;
-  width: 25em;
+  width: 100%;
+  min-width: 20em;
   background-color: #ffffff;
   border-radius: 15px 15px 0px 15px;
   padding: 1.5em;
@@ -26,7 +77,8 @@ body {
 
 .footer-card {
   height: 7em;
-  width: 25em;
+  width: 100%;
+  min-width: 20em;
   display: flex;
   position: relative;
 }
@@ -92,8 +144,112 @@ body {
 
 .offer-price {
   color: #941b0c;
-  font-size: 4em;
+  font-size: 3em;
   font-weight: 500;
   font-family: "Rubik", sans-serif;
   margin: 0;
+}
+
+.oferta {
+  background-color: #ffdf52;
+}
+
+section {
+  margin-bottom: 4em;
+}
+
+.novedades {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.cardnovedades {
+  width: 49%;
+  height: 279px;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-card-novedades {
+  display: flex;
+  flex-direction: row;
+  height: 80%;
+  position: relative;
+}
+
+.producto-img {
+  width: 40%;
+  display: flex;
+  left: 2em;
+  justify-content: center;
+}
+
+.producto-img img {
+  position: relative;
+  width: 60%;
+  rotate: -20deg;
+}
+
+.producto-info {
+  display: flex;
+  flex-direction: column;
+  width: calc(60% - 3em);
+  padding-left: 3em;
+}
+
+.producto-info h3 {
+  font-family: "Rubik", sans-serif;
+}
+
+.producto-id {
+  font-family: "Rubik", sans-serif;
+}
+
+.novedades-prices {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 0;
+  position: absolute;
+  right: 1em;
+  bottom: 0.3em;
+}
+
+.novedades-prices h3 {
+  margin: 0;
+  color: #941b0c;
+  font-size: 3em;
+}
+
+.novedades-prices h4 {
+  margin: 0;
+  color: #808080;
+  font-size: 1em;
+}
+
+.footer-card-novedades {
+  display: flex;
+  flex-direction: row;
+  background-color: #f2f2f2;
+  height: 20%;
+  border-radius: 10px;
+}
+
+.footer-card-novedades button {
+  width: 50%;
+  height: 100%;
+  border-style: none;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.footer-card-novedades button img {
+  margin-right: 1em;
 }
