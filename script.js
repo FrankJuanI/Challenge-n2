@@ -332,7 +332,7 @@ const loadCardInfoDestacados = (cardProdSO, producto) => {
 
   footerCardProdSO.innerHTML = `
       <div class="footer-card">
-              <button onclick="addToCar(${producto.ID})" class="addCard-button">
+              <button onclick="addToCar(${producto.ID}); cargarCarrito()" class="addCard-button">
                 ${SVG}
               </button>
               <div class="footer">
@@ -361,7 +361,9 @@ const loadCardInfoOfertas = (cardProdSO, producto) => {
   const footerCardProdSO = cardProdSO.querySelector(".footer-card");
   footerCardProdSO.innerHTML = `
       <div class="footer-card">
-              <button onclick="addToCar(${producto.ID})" class="addCard-button">
+              <button onclick="addToCar(${
+                producto.ID
+              }); cargarCarrito()" class="addCard-button">
                 ${SVG}
               </button>
               <div class="footer oferta">
@@ -424,21 +426,18 @@ const cerrarCarrito = () => {
   document.body.style.overflow = "auto";
 };
 
-const traerInfoDeProducto = (id) => {
-  autosDB.forEach((product) => {
-    if (product.ID == id) {
-      console.log(product);
-      return product;
-    }
+const findProducto = (id) => {
+  return autosDB.find((auto) => {
+    return auto.ID == id;
   });
 };
 
 const loadCarProducto = (producto, id) => {
-  const info = traerInfoDeProducto(id);
-  console.log(info);
-  producto.loadinn = `
+  const info = findProducto(id);
+  console.log("Info: ", info);
+  producto.innerHTML = `
     <img
-      src="${info.AñoDelVehículo}"
+      src="${info.Imagen}"
       alt=""
     />
     <h3>${info.NombreDelVehículo}</h3>
@@ -458,17 +457,19 @@ const loadCarProducto = (producto, id) => {
       </button>
     </div>
   `;
+  return producto;
 };
 
 const agregarALista = (id) => {
-  const listaProductos = document.querySelectorAll(".lista-de-productos");
+  const listaProductos = document.querySelector(".lista-de-productos");
   const porducto = createElementWithClass("div", "producto-carrito");
   loadCarProducto(porducto, id);
+  console.log("lista Productos div: ", listaProductos);
+  listaProductos.appendChild(porducto);
 };
 
 const cargarCarrito = () => {
   const carrito = obtenerCarrito();
-  console.log(carrito);
   carrito.forEach((id) => {
     agregarALista(id);
   });
