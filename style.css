@@ -5,16 +5,19 @@
 body {
   margin: 0;
   background-color: #222222;
-  max-width: 1440px;
-  margin: 0 auto;
+  width: 100vw;
 }
 
 .navBar {
   display: flex;
   flex-direction: row;
-  max-width: 1440px;
+  max-width: 1600px;
   justify-content: space-between;
   margin: 2em 1em;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .logogm {
@@ -29,34 +32,47 @@ body {
   justify-content: space-between;
 }
 
+.options button {
+  background-color: transparent;
+  border: none;
+}
+
 .productos-destacados {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   margin-bottom: 4em;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .info {
   font-size: 1rem;
   color: #ffffff;
   font-family: "Inter", sans-serif;
+  margin-left: 10px;
 }
 
 .cards {
-  display: flex;
+  display: grid;
+  grid-column: auto;
+  grid-template-columns: 24% 24% 24% 24%;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
+  justify-items: center;
 }
 
 .card {
-  width: 24%;
+  width: 100%;
+  max-width: 380px;
   box-sizing: border-box;
+  display: inline-block;
+  margin-bottom: 1em;
 }
 
 .header-card {
   height: 25em;
   width: 100%;
-  min-width: 20em;
   background-color: #ffffff;
   border-radius: 15px 15px 0px 15px;
   padding: 1.5em;
@@ -64,21 +80,36 @@ body {
   box-sizing: border-box;
 }
 
+.header-card h3 {
+  margin: 8px;
+  margin-left: 4px;
+}
+
+.header-card p {
+  margin: 4px;
+}
+
 .product-image {
   height: 55%;
-  width: 90%;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 1.5em;
+}
+
+.productos-en-oferta {
+  max-width: 1600px;
   margin: 0 auto;
 }
 
 .product-image img {
   height: 100%;
   width: 100%;
+  object-fit: contain;
 }
 
 .footer-card {
   height: 7em;
   width: 100%;
-  min-width: 20em;
   display: flex;
   position: relative;
 }
@@ -100,7 +131,7 @@ body {
   height: 30px;
   width: 30px;
   background-color: transparent;
-  box-shadow: 0px -15px #ffffff;
+  box-shadow: 0px -15px #fff;
   top: 0px;
   right: 0px;
   position: absolute;
@@ -144,7 +175,7 @@ body {
 
 .offer-price {
   color: #941b0c;
-  font-size: 3em;
+  font-size: 2.5em;
   font-weight: 500;
   font-family: "Rubik", sans-serif;
   margin: 0;
@@ -158,10 +189,13 @@ section {
   margin-bottom: 4em;
 }
 
+/* -- Novedades -- */
 .novedades {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .cardnovedades {
@@ -179,8 +213,7 @@ section {
   height: 80%;
   position: relative;
 }
-
-.producto-img {
+.cards-novedades .producto-img {
   width: 40%;
   display: flex;
   left: 2em;
@@ -189,8 +222,9 @@ section {
 
 .producto-img img {
   position: relative;
-  width: 60%;
+  width: 50%;
   rotate: -20deg;
+  object-fit: contain;
 }
 
 .producto-info {
@@ -206,6 +240,12 @@ section {
 
 .producto-id {
   font-family: "Rubik", sans-serif;
+}
+
+.cards-novedades {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .novedades-prices {
@@ -252,4 +292,128 @@ section {
 
 .footer-card-novedades button img {
   margin-right: 1em;
+}
+
+/* -- Carrito -- */
+
+.carrito-container {
+  z-index: 10;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(12px);
+  transition: 1s;
+}
+
+.cerrar-carrito {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.cerrar-carrito button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+.cerrar-carrito svg {
+  height: 50px;
+  width: 50px;
+}
+
+.card-carrito {
+  box-shadow: 0px 0px 100px 60px rgba(0, 0, 0, 0.3);
+  height: 400px;
+  width: 800px;
+  background-color: #fff;
+  border-radius: 25px;
+  padding: 1em;
+  position: relative;
+  display: flex;
+}
+
+.lista-de-productos {
+  display: flex;
+  width: 60%;
+  background-color: #941b0c;
+  height: 100%;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.seccion-precios {
+  display: flex;
+  width: 35%;
+  background-color: aqua;
+  height: 100%;
+}
+
+.producto-carrito {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: chocolate;
+  justify-content: space-between;
+  height: 80px;
+  margin-bottom: 0.5em;
+}
+
+.producto-carrito img {
+  height: 80px;
+}
+
+.producto-carrito h3 {
+  margin: auto;
+}
+
+.producto-carrito button {
+  height: 30px;
+  width: 30px;
+  padding: 0;
+}
+
+.producto-carrito button img {
+  height: 30px;
+  width: 30px;
+}
+
+.cantidad-del-producto {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 30%;
+}
+
+@media screen and (max-width: 1250px) {
+  .cards {
+    grid-template-columns: 30% 30% 30%;
+  }
+  .offer-price {
+    font-size: 2em;
+  }
+  .cards-novedades {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+  }
+  .cardnovedades {
+    max-width: 800px;
+    width: 100%;
+    margin-bottom: 1em;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cards {
+    grid-template-columns: 45% 45%;
+  }
+  .cards-novedades {
+    flex-direction: column;
+  }
 }
